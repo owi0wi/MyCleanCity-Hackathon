@@ -31,8 +31,10 @@ class UploadController extends CI_Controller {
 	
 	public function reponse()
 	{
+
 		$destination = "c:/wamp/www/mycleancity-hackathon/mycleancity/pictures/test.jpg";
-		if($_POST){
+
+		if(isset($_POST)){
 			// $ret = false;
 			$img_blob = '';
 			$img_taille = 0;
@@ -40,43 +42,15 @@ class UploadController extends CI_Controller {
 			$img_nom = '';
 			
 			$image = $this->input->post('fic', true);
+			echo "files:";
+			 print_r($_FILES);
+			 echo "post:";
 			 print_r($_POST);
-			// $ret = is_uploaded_file ($_FILES['fic']['tmp_name']);
-			
-			// if ( !$ret ){
-				// echo "Problème de transfert";
-				// return false;
-			// }else{
 			// Le fichier a bien été reçu
-				$img_taille = $_FILES['fic']['size'];
-				$img_type = $_FILES['fic']['type'];
-				$img_nom = $_FILES['fic']['name'];
-				//echo "<a href='http://localhost/frames/CodeIgniter/index.php/main/view_image'>lister</a>";
-				move_uploaded_file ( $_FILES['fic']['tmp_name'] ,$destination);
-	//			$img_blob = file_get_contents ($_FILES['fic']['tmp_name']);
-				// echo $img_nom;
-				// echo $img_type;
-				// echo $_FILES['fic']['tmp_name'];
-				//$insert_img = $this->requete->insert_images($img_nom, $img_taille, $img_type, $img_blob);
-				
-				// if ( $img_taille > $taille_max ){
-					// echo "Trop gros !";
-					// return false;
-				// }
-
-			// }
-			
-			
-			// $lunette =  $this->input->post('lunette', true);
-			// $couleur =  $this->input->post('couleur', true);
-			// $insert_lunettes = $this->requete->insert_lunettes($lunette, $couleur);
-			// $lister_lunettes = $this->requete->lister_lunettes($lunette, $couleur);
-			
-			// foreach ( $lister_lunettes->result() as $row){
-				// echo $row->monture."\n";
-				// echo $row->couleur."\n";
-				// echo $row->ID."\n";
-			// }
+			$img_taille = $_FILES['fic']['size'];
+			$img_type = $_FILES['fic']['type'];
+			$img_nom = $_FILES['fic']['name'];
+			move_uploaded_file ( $_FILES['fic']['tmp_name'] ,$destination);
 		}
 	}
 }
