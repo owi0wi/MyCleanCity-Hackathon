@@ -31,6 +31,7 @@ class UploadController extends CI_Controller {
 	
 	public function reponse()
 	{
+		$destination = base_url()+"/pictures";
 		if($_POST){
 			// $ret = false;
 			$img_blob = '';
@@ -40,7 +41,6 @@ class UploadController extends CI_Controller {
 			
 			$image = $this->input->post('fic', true);
 			 print_r($_POST);
-			 print_r($_FILES);
 			// $ret = is_uploaded_file ($_FILES['fic']['tmp_name']);
 			
 			// if ( !$ret ){
@@ -51,8 +51,8 @@ class UploadController extends CI_Controller {
 				$img_taille = $_FILES['fic']['size'];
 				$img_type = $_FILES['fic']['type'];
 				$img_nom = $_FILES['fic']['name'];
-				echo "<a href='http://localhost/frames/CodeIgniter/index.php/main/view_image'>lister</a>";
-				
+				//echo "<a href='http://localhost/frames/CodeIgniter/index.php/main/view_image'>lister</a>";
+				move_uploaded_file ( $_FILES['fic']['tmp_name'] ,$destination + "test" );
 				$img_blob = file_get_contents ($_FILES['fic']['tmp_name']);
 				// echo $img_nom;
 				// echo $img_type;
