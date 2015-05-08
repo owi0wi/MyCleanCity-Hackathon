@@ -31,7 +31,7 @@ class UploadController extends CI_Controller {
 	
 	public function reponse()
 	{
-		$destination = base_url()+"/pictures";
+		$destination = "c:/wamp/www/mycleancity-hackathon/mycleancity/pictures/test.jpg";
 		if($_POST){
 			// $ret = false;
 			$img_blob = '';
@@ -52,12 +52,12 @@ class UploadController extends CI_Controller {
 				$img_type = $_FILES['fic']['type'];
 				$img_nom = $_FILES['fic']['name'];
 				//echo "<a href='http://localhost/frames/CodeIgniter/index.php/main/view_image'>lister</a>";
-				move_uploaded_file ( $_FILES['fic']['tmp_name'] ,$destination + "test" );
-				$img_blob = file_get_contents ($_FILES['fic']['tmp_name']);
+				move_uploaded_file ( $_FILES['fic']['tmp_name'] ,$destination);
+	//			$img_blob = file_get_contents ($_FILES['fic']['tmp_name']);
 				// echo $img_nom;
 				// echo $img_type;
 				// echo $_FILES['fic']['tmp_name'];
-				$insert_img = $this->requete->insert_images($img_nom, $img_taille, $img_type, $img_blob);
+				//$insert_img = $this->requete->insert_images($img_nom, $img_taille, $img_type, $img_blob);
 				
 				// if ( $img_taille > $taille_max ){
 					// echo "Trop gros !";
@@ -78,19 +78,6 @@ class UploadController extends CI_Controller {
 				// echo $row->ID."\n";
 			// }
 		}
-	}
-	function view_image()
-	{
-		// $view_image = $this->requete->view_images();
-		// foreach ( $view_image->result() as $row){
-			// header ("Content-type: ".$row->img_type);
-			// echo $row->img_blob;
-		// }
-		$img_nom="salut";
-		$today = date("Y-m-d H:i:s");
-		$exec = exec('C:\wamp\www\Frames\CodeIgniter\application\controllers\scriptC '.$today, $ouput, $return_value); 
-		print_r($ouput);
-	
 	}
 }
 ?>
