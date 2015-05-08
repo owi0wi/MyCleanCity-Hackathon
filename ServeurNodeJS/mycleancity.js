@@ -12,7 +12,7 @@ app.use(session({secret: 'todotopsecret'}))
 /* S'il n'y a pas de todolist dans la session,
 on en crée une vide sous forme d'array avant la suite */
 .use(function(req, res, next){
-    if (typeof(req.session.todolist) == 'undefined') {
+    if (typeof(req.session.txtlist) == 'undefined') {
         req.session.txtlist = [];
     }
     next();
@@ -25,8 +25,8 @@ on en crée une vide sous forme d'array avant la suite */
 
 /* On ajoute un élément à la txtlist */
 .post('/index/ajouter/', urlencodedParser, function(req, res) {
-    if (req.body.newtodo != '') {
-        req.session.txtlist.push(req.body.newtodo);
+    if (req.body.newtext != '') {
+        req.session.txtlist.push(req.body.newtext);
     }
     res.redirect('/index');
 })
