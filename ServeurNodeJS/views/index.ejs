@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>My clean city</title>
+    </head>
+
+    <body>
+        <h1>Application MyCleanCity </h1>
+
+        <ul>
+        <% txtlist.forEach(function(txt, index) { %>
+            <li><a href="/index/supprimer/<%= index %>">|Supp| </a> <%= txt %></li>
+        <% }); %>
+        </ul>
+
+        <form action="/index/ajouter/" method="post">
+            <p>
+                <label for="newtext">Ajouter un texte</label>
+                <input type="text" name="newtext" id="newtext" autofocus />
+                <input type="submit" />
+            </p>
+        </form>
+    </body>
+</html>
