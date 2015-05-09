@@ -40,12 +40,40 @@ class ModerationController extends CI_Controller {
 			if($fkey =='rows'){
 				foreach ($fvalue as $key => $value) {
 					$reponse = $this->listingModel->select($value->id);
-					array_push($listing, $reponse);
+					if(isset($reponse->priorite))
+						switch ($reponse->priorite) {
+							case '0':
+							$reponse->priorite='Faible';
+							break;
+							case '1':
+							$reponse->priorite='Moyenne';
+							break;
+							case '2':
+							$reponse->priorite='Forte';
+							break;
+							default:
+							break;
+						}
+						if(isset($reponse->type))
+							switch ($reponse->type) {
+								case '0':
+								$reponse->type='Dechet';
+								break;
+								case '1':
+								$reponse->type='Nature';
+								break;
+								case '2':
+								$reponse->type='Infrastructure';
+								break;
+								default:
+								break;
+							}
+							array_push($listing, $reponse);
+						}
+					}
 				}
+				return $listing;
 			}
-		}
-		return $listing;
-	}
 
-}
-?>
+		}
+		?>
