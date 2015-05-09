@@ -33,7 +33,7 @@
 
 <body>
 
-    <!--     <div class="brand">mycleancity</div> -->
+    <!--     <div class="brand">mycleancityf</div> -->
     <div class="address-bar">
     <a href="/mycleancity-hackathon/mycleancity/index.php/uploadController"><img class="img-responsive img-center" src="/mycleancity-hackathon/mycleancity/assets/img/logoMCC2.png" alt=""></a>
     </div>
