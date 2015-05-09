@@ -32,9 +32,10 @@
 
 <body>
 
-<!--     <div class="brand">mycleancity</div>
-    <div class="address-bar">Association de relaxation sur Lannion</div> -->
-    <a href="/mycleancity-hackathon/mycleancity/index.php/uploadController"><img class="img-responsive img-center" src="/mycleancity-hackathon/mycleancity/assets/img/logoMCC.png" alt=""></a>
+    <!--     <div class="brand">mycleancity</div> -->
+    <div class="address-bar">
+        <a href="/mycleancity-hackathon/mycleancity/index.php/uploadController"><img class="img-responsive img-center" src="/mycleancity-hackathon/mycleancity/assets/img/logoMCC.png" alt=""></a>
+    </div>
     <!-- Navigation -->
     <nav class="navbar navbar-default" role="navigation">
         <div class="container">
