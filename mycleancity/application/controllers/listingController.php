@@ -26,7 +26,6 @@ class ListingController extends CI_Controller {
 	public function index()
 	{
 		$data['list'] = $this->listing();
-		//$data['list'] = 'lolilol';
 
 		$this->load->view('header');
 		$this->load->view('listingView', $data);
@@ -41,6 +40,21 @@ class ListingController extends CI_Controller {
 			if($fkey =='rows'){
 				foreach ($fvalue as $key => $value) {
 					$reponse = $this->listingModel->select($value->id);
+					if(isset($reponse->priorite))
+						switch ($reponse->priorite) {
+							case '0':
+								$reponse->priorite='faible';
+								break;
+							case '1':
+								$reponse->priorite='moyenne';
+								break;
+							case '2':
+								$reponse->priorite='forte';
+								break;
+							default:
+								# code...
+								break;
+						}
 					if(isset($reponse->abus)){
 						if($reponse->abus >= 5){
 

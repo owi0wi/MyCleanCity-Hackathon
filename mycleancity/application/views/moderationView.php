@@ -21,7 +21,7 @@ if (!empty($list)) {
         echo '<img class="img-responsive img-border img-left" src="'. $objet->path .'" alt="">';
         echo '<hr class="visible-xs">';
         echo '<div id="map"></div>';
-        echo '<p><strong>Coordonnees</strong> : Longitude :  '.$objet->lon.' | Latitude : '.$objet->lat.'</p>';
+        //echo '<p><strong>Coordonnees</strong> : Longitude :  '.$objet->lon.' | Latitude : '.$objet->lat.'</p>';
         echo '<p><strong>Ordre de priorite</strong> : '.$objet->priorite.'</p>';
         echo '<p><strong>Type</strong> : '.$objet->type.'</p>';
         echo '<hr>';
