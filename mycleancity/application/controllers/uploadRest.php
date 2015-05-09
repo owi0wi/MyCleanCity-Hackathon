@@ -34,10 +34,10 @@ class UploadRest extends REST_Controller
     }
 
    function upload_post(){
-   	$destination = "C:/wamp/www/mycleancity-hackathon/mycleancity/pictures/";
-   	$insertDestination = 'c:/wamp/www/mycleancity-hackathon/mycleancity/pictures/clean';
-   	//$destination = "C:/wamp/www/MCC/mycleancity/pictures/";
-   	//$insertDestination = 'c:/wamp/www/MCC/mycleancity/pictures/clean';
+   	//$destination = "C:/wamp/www/mycleancity-hackathon/mycleancity/pictures/";
+   	//$insertDestination = 'c:/wamp/www/mycleancity-hackathon/mycleancity/pictures/clean';
+   	$destination = "C:/wamp/www/MCC/mycleancity/pictures/";
+   	$insertDestination = 'c:/wamp/www/MCC/mycleancity/pictures/clean';
    	$extension = ".png";
 	$nbPictures = 0;
    	if($_POST && $_FILES){	
@@ -50,9 +50,6 @@ class UploadRest extends REST_Controller
 		}
 		$destination .= "clean".$nbPictures.$extension;
 		$insertDestination .= $nbPictures.$extension;
-
-		$json = json_encode($_POST);
-		print_r(json_decode($json));
 		$_POST["path"] = $insertDestination;
 
 		$img_taille = $_FILES['picture']['size'];
@@ -60,8 +57,10 @@ class UploadRest extends REST_Controller
 		$img_nom = $_FILES['picture']['name'];
 		if(move_uploaded_file ( $_FILES['picture']['tmp_name'] ,$destination)){
 			$nbPictures += 1;
-			$this->uploadModel->insert(json_encode($_POST));
+			$this->uploadModel->insert($_POST);
 			$this->response(json_encode(array('reponse' => 'ok')), 200);
 		}
+	}
    }
 }
+?>

@@ -33,7 +33,7 @@ class UploadController extends CI_Controller {
 	public function dataPushed()
 	{
 
-		$destination = "C:/wamp/www/mycleancity-hackathon/mycleancity/pictures/";
+	$destination = "C:/wamp/www/mycleancity-hackathon/mycleancity/pictures/";
    	$insertDestination = 'c:/wamp/www/mycleancity-hackathon/mycleancity/pictures/clean';
    	//$destination = "C:/wamp/www/MCC/mycleancity/pictures/";
    	//$insertDestination = 'c:/wamp/www/MCC/mycleancity/pictures/clean';

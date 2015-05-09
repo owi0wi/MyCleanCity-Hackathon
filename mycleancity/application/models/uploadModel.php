@@ -9,8 +9,10 @@ class UploadModel extends CI_Model {
 	}
 	    
 	function insert($json){
-	    $new_doc = new stdClass();
-	    $new_doc->clean = $json;
+		$new_doc = new stdClass();
+		foreach($json as $key => $value){
+			$new_doc->$key = $value;
+		}
 	   	$tables = new couchClient('http://localhost:5984/','mycleancity');
 	    	 
 	 	try {
