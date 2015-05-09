@@ -32,8 +32,8 @@ class UploadController extends CI_Controller {
 	public function dataPushed()
 	{
 
-		//$destination = "c:/wamp/www/mycleancity-hackathon/mycleancity/pictures/test.jpg";
-		$destination = "c:/wamp/www/MCC/mycleancity/pictures/";
+		$destination = "c:/wamp/www/mycleancity-hackathon/mycleancity/pictures/";
+		//$destination = "c:/wamp/www/MCC/mycleancity/pictures/";
 		$extension = ".png";
 		$nbPictures = 0;
 

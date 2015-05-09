@@ -11,7 +11,7 @@
 		// }
 		?>
 		<h3>Envoi d'une image</h3>
-		<form enctype="multipart/form-data" action="http://localhost/MCC/mycleancity/index.php/uploadController/dataPushed" method="post">
+		<form enctype="multipart/form-data" action="http://localhost/mycleancity-hackathon/mycleancity/index.php/uploadController/dataPushed" method="post">
 			<input type="hidden" name="MAX_FILE_SIZE" value="7000000" />
 			<input type="file" name="fic" size=50 />
 			<input type="submit" value="Envoyer" />
