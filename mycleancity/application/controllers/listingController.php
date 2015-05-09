@@ -43,56 +43,69 @@ class ListingController extends CI_Controller {
 					if(isset($reponse->priorite))
 						switch ($reponse->priorite) {
 							case '0':
-								$reponse->priorite='faible';
-								break;
+							$reponse->priorite='Faible';
+							break;
 							case '1':
-								$reponse->priorite='moyenne';
-								break;
+							$reponse->priorite='Moyenne';
+							break;
 							case '2':
-								$reponse->priorite='forte';
-								break;
+							$reponse->priorite='Forte';
+							break;
 							default:
-								# code...
+							break;
+						}
+						if(isset($reponse->type))
+							switch ($reponse->type) {
+								case '0':
+								$reponse->type='Dechet';
 								break;
-						}
-					if(isset($reponse->abus)){
-						if($reponse->abus >= 5){
+								case '1':
+								$reponse->type='Nature';
+								break;
+								case '2':
+								$reponse->type='Infrastructure';
+								break;
+								default:
+								break;
+							}
+							if(isset($reponse->abus)){
+								if($reponse->abus >= 5){
 
-						}else{
-							array_push($listing, $reponse);
+								}else{
+									array_push($listing, $reponse);
+								}
+							}else{
+								array_push($listing, $reponse);
+							}
 						}
-					}else{
-						array_push($listing, $reponse);
 					}
 				}
+				return $listing;
 			}
-		}
-		return $listing;
-	}
 
-	function update($id){
-		$doc = $this->listingModel->select($id);
-		foreach ($_POST as $key => $value) {
-			if($key != 'id'){
-				if($key == 'validation'){
-  					if($value == '0'){
-  						$doc->oui +=1 ;
-  					}elseif($value =='1'){
-  						$doc->non +=1 ;
-  					}elseif($value == '2'){
-  						$doc->dejavue +=1 ;
-  					}elseif($value =='3'){
-  						$doc->abus += 1;
-  					}
-  				}
-  			$doc->$key = $_POST[$key];
+			function update($id){
+				$doc = $this->listingModel->select($id);
+				foreach ($_POST as $key => $value) {
+					if($key != 'id'){
+						if($key == 'validation'){
+							if($value == '0'){
+								$doc->oui +=1 ;
+							}elseif($value =='1'){
+								$doc->non +=1 ;
+							}elseif($value == '2'){
+								$doc->dejavue +=1 ;
+							}elseif($value =='3'){
+								$doc->abus += 1;
+							}
+						}
+						$doc->$key = $_POST[$key];
+					}
+				}
+				$this->listingModel->update($doc);
+			}
+			function delete($id){
+				$doc = $this->listingModel->select($id);
+				$this->listingModel->delete($doc);
 			}
 		}
-		$this->listingModel->update($doc);
-	}
-	function delete($id){
-		$doc = $this->listingModel->select($id);
-		$this->listingModel->delete($doc);
-	}
-}
-?>
+		?>
