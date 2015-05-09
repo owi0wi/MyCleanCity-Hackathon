@@ -80,7 +80,7 @@ class ListingController extends CI_Controller {
 						}
 					}
 				}
-				
+
 				return array_reverse($listing);
 			}
 
@@ -105,6 +105,10 @@ class ListingController extends CI_Controller {
 			function delete($id){
 				$doc = $this->listingModel->select($id);
 				$this->listingModel->delete($doc);
+			}
+
+			function trierList() {
+				
 			}
 		}
 		?>
