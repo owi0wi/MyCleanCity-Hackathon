@@ -48,8 +48,10 @@
         				<hr>
         				<!-- <img class="img-responsive img-border img-left" src="img/im1.jpg" alt=""> -->
 
-        				<form enctype="multipart/form-data" action="http://localhost/mycleancity-hackathon/mycleancity/index.php/uploadController/dataPushed" method="post">
-        					<input type="hidden" name="MAX_FILE_SIZE" value="7000000" />
+        				<form enctype="multipart/form-data" action="http://localhost/mycleancity-hackathon/mycleancity/index.php/uploadController/upload" method="post">
+        				<input type="hidden" name="user" value="1" />
+                        <input type="hidden" name="lon" value="12" />
+                        <input type="hidden" name="lat" value="34" />
         				<p><input type="file" name="picture" size=50 /></p>
                         <p> Type de degradations : 
                              <select name="type">
@@ -59,7 +61,7 @@
                             </select>
                         </p>
                         <p> Priorite : 
-                             <select name="priority">
+                             <select name="priorite">
                                 <option value="0">Faible</option>
                                 <option value="1" selected="selected">Moyenne</option>
                                 <option value="2">Forte</option>
@@ -67,7 +69,7 @@
                         </p>
         				<p>Commentaire :</p>
                         <p>    
-                            <textarea name="commentaire" id="com" rows="6" cols="40"></textarea>  
+                            <textarea name="commentaire" rows="6" cols="40"></textarea>  
                         </p>
                         <input type="submit" value="Envoyer" />
                     </form>
