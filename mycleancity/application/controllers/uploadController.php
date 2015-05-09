@@ -32,33 +32,33 @@ class UploadController extends CI_Controller {
 	public function dataPushed()
 	{
 
-		$destination = "c:/wamp/www/mycleancity-hackathon/mycleancity/pictures/";
-		//$destination = "c:/wamp/www/MCC/mycleancity/pictures/";
-		$extension = ".png";
-		$nbPictures = 0;
+		$destination = "C:/wamp/www/mycleancity-hackathon/mycleancity/pictures/";
+   	$insertDestination = 'c:/wamp/www/mycleancity-hackathon/mycleancity/pictures/clean';
+   	//$destination = "C:/wamp/www/MCC/mycleancity/pictures/";
+   	//$insertDestination = 'c:/wamp/www/MCC/mycleancity/pictures/clean';
+   	$extension = ".png";
+	$nbPictures = 0;
+   	if($_POST && $_FILES){	
+		if($dossier = opendir($destination)){
+			while(false !== ($fichier = readdir($dossier))){
+				if($fichier != '.' && $fichier != '..'){
+					$nbPictures +=1;
+				}
+			}	
+		}
+		$destination .= "clean".$nbPictures.$extension;
+		$insertDestination .= $nbPictures.$extension;
 
-		if($_POST){
-			// $ret = false;
-			$img_blob = '';
-			$img_taille = 0;
-			$img_type = '';
-			$img_nom = '';
-			if($dossier = opendir($destination)){
-				while(false !== ($fichier = readdir($dossier))){
-					if($fichier != '.' && $fichier != '..'){
-						$nbPictures +=1;
-					}
-				}	
-			}
-			$destination .= "clean".$nbPictures.$extension;	
-			// Le fichier a bien été reçu
-			$img_taille = $_FILES['picture']['size'];
-			$img_type = $_FILES['picture']['type'];
-			$img_nom = $_FILES['picture']['name'];
-			if(move_uploaded_file ( $_FILES['picture']['tmp_name'] ,$destination)){
-				$this->uploadModel->insert(json_encode($_POST['data']));
-			}
-			
+		$json = json_encode($_POST);
+		print_r(json_decode($json));
+		$_POST["path"] = $insertDestination;
+
+		$img_taille = $_FILES['picture']['size'];
+		$img_type = $_FILES['picture']['type'];
+		$img_nom = $_FILES['picture']['name'];
+		if(move_uploaded_file ( $_FILES['picture']['tmp_name'] ,$destination)){
+			$nbPictures += 1;
+			$this->uploadModel->insert(json_encode($_POST));
 		}
 	}
 }
