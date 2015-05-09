@@ -34,7 +34,7 @@
 
     <!--     <div class="brand">mycleancity</div> -->
     <div class="address-bar">
-        <a href="/mycleancity-hackathon/mycleancity/index.php/uploadController"><img class="img-responsive img-center" src="/mycleancity-hackathon/mycleancity/assets/img/logoMCC.png" alt=""></a>
+    <a href="/mycleancity-hackathon/mycleancity/index.php/uploadController"><img class="img-responsive img-center" src="/mycleancity-hackathon/mycleancity/assets/img/logoMCC2.png" alt=""></a>
     </div>
     <!-- Navigation -->
     <nav class="navbar navbar-default" role="navigation">
