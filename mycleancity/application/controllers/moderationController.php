@@ -17,16 +17,34 @@ class ModerationController extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
-	 public function __construct()
-	 {
-	 	parent::__construct();
-	 }
-	 
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model('listingModel');
+	}
+
 	public function index()
 	{
+		$data['list'] = $this->listing();
+
+
 		$this->load->view('header');
-		$this->load->view('moderationView');
+		$this->load->view('moderationView', $data);
 		$this->load->view('footer');
+	}
+
+	function listing(){
+		$list = $this->listingModel->selectAll();
+		$listing = array();
+		foreach (get_object_vars($list) as $fkey => $fvalue){
+			if($fkey =='rows'){
+				foreach ($fvalue as $key => $value) {
+					$reponse = $this->listingModel->select($value->id);
+					array_push($listing, $reponse);
+				}
+			}
+		}
+		return $listing;
 	}
 
 }
