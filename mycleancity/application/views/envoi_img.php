@@ -50,14 +50,28 @@
 
         				<form enctype="multipart/form-data" action="http://localhost/mycleancity-hackathon/mycleancity/index.php/uploadController/dataPushed" method="post">
         					<input type="hidden" name="MAX_FILE_SIZE" value="7000000" />
-        					<input type="file" name="picture" size=50 /><br>
-        					Cle : <input type="text" name="data"/><br>
-        					<input type="submit" value="Envoyer" />
-        				</form>
-        			</div>
-        		</div>
-        	</div>
+        				<p><input type="file" name="picture" size=50 /></p>
+                        <p> Type de degradations : 
+                             <select name="type">
+                                <option value="0">Dechet</option>
+                                <option value="1" selected="selected">Nature</option>
+                                <option value="2">Infrastructure</option>
+                            </select>
+                        </p>
+                        <p> Priorite : 
+                             <select name="priority">
+                                <option value="0">Faible</option>
+                                <option value="1" selected="selected">Moyenne</option>
+                                <option value="2">Forte</option>
+                            </select>
+                        </p>
+        				<p>Commentaire : <input type="text" name="data"/></p>
+                        <input type="submit" value="Envoyer" />
+                    </form>
+                </div>
+            </div>
         </div>
+</div>
         <!-- /.container -->
 
         <!-- jQuery -->
