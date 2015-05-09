@@ -63,4 +63,5 @@ class UploadController extends CI_Controller {
 		}
 	}
 }
+}
 ?>
