@@ -55,7 +55,7 @@ class UploadRest extends REST_Controller
 			$destination .= "clean".$nbPictures.$extension;
 			$insertDestination .= $nbPictures.$extension;
 
-			array_push($_POST['data'],array("path" => $insertDestination);
+			array_push($_POST['data'],array("path" => $insertDestination));
 			$img_taille = $_FILES['picture']['size'];
 			$img_type = $_FILES['picture']['type'];
 			$img_nom = $_FILES['picture']['name'];
