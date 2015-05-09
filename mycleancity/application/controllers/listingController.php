@@ -80,7 +80,8 @@ class ListingController extends CI_Controller {
 						}
 					}
 				}
-				return $listing;
+				
+				return array_reverse($listing);
 			}
 
 			function update($id){
