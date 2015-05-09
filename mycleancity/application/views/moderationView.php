@@ -25,12 +25,12 @@ if (!empty($list)) {
         echo '<p><strong>Type</strong> : '.$objet->type.'</p>';
         echo '<hr>';
         echo '<p><strong>Commentaire </strong> : '.$objet->commentaire.'</p>';
-        echo '</div>';
         echo '<div class="col-button">';
-        echo '<a href=""><img class="img-responsive img-border" id="img-button" src="/mycleancity-hackathon/mycleancity/assets/img/buttonYes.png" alt=""></a>';
-        echo '<a href=""><img class="img-responsive img-border" id="img-button" src="/mycleancity-hackathon/mycleancity/assets/img/buttonNo.png" alt=""></a>';
-        echo '<a href=""><img class="img-responsive img-border" id="img-button" src="/mycleancity-hackathon/mycleancity/assets/img/buttonSignaler.png" alt=""></a>';
-        echo '<a href=""><img class="img-responsive img-border" id="img-button" src="/mycleancity-hackathon/mycleancity/assets/img/buttonDoublon.png" alt=""></a>';
+        echo '<a href=""><img class="img-responsive" id="img-button" src="/mycleancity-hackathon/mycleancity/assets/img/buttonYes.png" alt=""></a>';
+        echo '<a href=""><img class="img-responsive" id="img-button" src="/mycleancity-hackathon/mycleancity/assets/img/buttonNo.png" alt=""></a>';
+        echo '<a href=""><img class="img-responsive" id="img-button" src="/mycleancity-hackathon/mycleancity/assets/img/buttonSignaler.png" alt=""></a>';
+        echo '<a href=""><img class="img-responsive" id="img-button" src="/mycleancity-hackathon/mycleancity/assets/img/buttonDoublon.png" alt=""></a>';
+        echo '</div>';
         echo '</div>';
         echo '</div>';
         echo '</div>';
