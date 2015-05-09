@@ -33,8 +33,8 @@ class UploadController extends CI_Controller {
 	{
 
 		//$destination = "c:/wamp/www/mycleancity-hackathon/mycleancity/pictures/test.jpg";
-		$destination = "c:/wamp/www/MCC/mycleancity/pictures/clean";
-		$extension = "png";
+		$destination = "c:/wamp/www/MCC/mycleancity/pictures/";
+		$extension = ".png";
 		$nbPictures = 0;
 
 		if($_POST){
@@ -50,12 +50,12 @@ class UploadController extends CI_Controller {
 					}
 				}	
 			}
-			$destination += $nbPictures + $extension;	
+			$destination .= "clean".$nbPictures.$extension;	
 			// Le fichier a bien été reçu
-			$img_taille = $_FILES['fic']['size'];
-			$img_type = $_FILES['fic']['type'];
-			$img_nom = $_FILES['fic']['name'];
-			if(move_uploaded_file ( $_FILES['fic']['tmp_name'] ,$destination)){
+			$img_taille = $_FILES['picture']['size'];
+			$img_type = $_FILES['picture']['type'];
+			$img_nom = $_FILES['picture']['name'];
+			if(move_uploaded_file ( $_FILES['picture']['tmp_name'] ,$destination)){
 				$this->uploadModel->insert();
 			}
 			

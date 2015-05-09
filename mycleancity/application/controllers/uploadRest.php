@@ -30,13 +30,15 @@ class UploadRest extends REST_Controller
         $this->methods['user_get']['limit'] = 500; //500 requests per hour per user/key
         $this->methods['user_post']['limit'] = 100; //100 requests per hour per user/key
         $this->methods['user_delete']['limit'] = 50; //50 requests per hour per user/key
+        $this->load->model('uploadModel');
     }
 
    function upload_post(){
    	$destination = "c:/wamp/www/MCC/mycleancity/pictures/";
    	$extension = ".png";
 	$nbPictures = 0;
-   	print_r($_POST);
+   	print_r(json_encode($_POST));
+   	print_r(json_encode($_FILES));
    		//if($_POST){
 			// $ret = false;
 			$img_blob = '';
@@ -51,17 +53,14 @@ class UploadRest extends REST_Controller
 					}
 				}	
 			}
-
 			$destination .= "clean".$nbPictures.$extension;	
-			$img_taille = $_FILES['fic']['size'];
-			$img_type = $_FILES['fic']['type'];
-			$img_nom = $_FILES['fic']['name'];
-			if(move_uploaded_file ( $_FILES['fic']['tmp_name'] ,$destination)){
+			$img_taille = $_FILES['picture']['size'];
+			$img_type = $_FILES['picture']['type'];
+			$img_nom = $_FILES['picture']['name'];
+			if(move_uploaded_file ( $_FILES['picture']['tmp_name'] ,$destination)){
 				$nbPictures += 1;
-				//$this->uploadModel->insert();
+				$this->uploadModel->insert(json_encode($_POST));
 				$this->response(json_encode(array('bonjour' => 'essai')), 200);
 			}
-			
-		//}
    }
 }
