@@ -42,8 +42,16 @@ class ListRest extends REST_Controller
 		if($fkey =='rows'){
 			foreach ($fvalue as $key => $value) {
 				$reponse = $this->listingModel->select($value->id);
-				var_dump($reponse);
-				array_push($listing, $reponse);
+				if(isset($reponse->abus)){
+					if($reponse->abus >= 5){
+
+					}else{
+						array_push($listing, $reponse);
+					}
+				}else{
+					array_push($listing, $reponse);
+				}
+				
 			}
 		}
 	}
