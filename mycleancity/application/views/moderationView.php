@@ -20,7 +20,15 @@ if (!empty($list)) {
         echo '<div class="col-lg-12">';
         echo '<img class="img-responsive img-border img-left" src="'. $objet->path .'" alt="">';
         echo '<hr class="visible-xs">';
-        echo '<div id="map"></div>';
+        echo '<div id="map"><script> var map = L.map('map').setView([51.505, -0.09], 13);
+                                                L.tileLayer(\'http://{s}.tiles.mapbox.com/v3/MapID/{z}/{x}/{y}.png\', {
+                                        attribution: \'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>\',
+                                        maxZoom: 18
+                                        }).addTo(map);
+
+
+
+        </scritpt></div>';
         echo '<p><strong>Coordonnees</strong> : Longitude :  '.$objet->lon.' | Latitude : '.$objet->lat.'</p>';
         echo '<p><strong>Ordre de priorite</strong> : '.$objet->priorite.'</p>';
         echo '<p><strong>Type</strong> : '.$objet->type.'</p>';
