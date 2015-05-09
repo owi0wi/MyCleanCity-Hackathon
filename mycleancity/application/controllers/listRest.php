@@ -64,4 +64,3 @@ class ListRest extends REST_Controller
   	$this->listingModel->delete($doc);
   	$this->response(array('reponse' => 'success !'), 200);
   }
-}

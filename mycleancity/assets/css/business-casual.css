@@ -224,3 +224,9 @@ footer p {
 #liens_centre {
 		margin-left: 300px;
 }
+
+#img-button {
+float: left;
+margin-right: 20px;
+width: 150px;
+}

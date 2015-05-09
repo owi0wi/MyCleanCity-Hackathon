@@ -25,10 +25,12 @@ foreach ($list as $cleList => $objet) {
     echo '<hr>';
     echo '<p><strong>Commentaire </strong> : '.$objet->commentaire.'</p>';
     echo '</div>';
-    echo '<a ref=""><img class="img-responsive img-border img-left" src="/mycleancity-hackathon/mycleancity/assets/img/buttonYes.jpg" alt=""></a>';
-    echo '<a ref=""><img class="img-responsive img-border img-left" src="/mycleancity-hackathon/mycleancity/assets/img/buttonNo.jpg" alt=""></a>';
-    echo '<a ref=""><img class="img-responsive img-border img-left" src="/mycleancity-hackathon/mycleancity/assets/img/buttonSignaler.jpg" alt=""></a>';
-    echo '<a ref=""><img class="img-responsive img-border img-left" src="/mycleancity-hackathon/mycleancity/assets/img/buttonDoublon.jpg" alt=""></a>';
+    echo '<div class="box">';
+    echo '<a href=""><img id="img-button" src="C:/wamp/www/mycleancity-hackathon/mycleancity/assets/img/buttonYes.png" alt=""></a>';
+    echo '<a href=""><img id="img-button" src="C:/wamp/www/mycleancity-hackathon/mycleancity/assets/img/buttonNo.png" alt=""></a>';
+    echo '<a href=""><img id="img-button" src="C:/wamp/www/mycleancity-hackathon/mycleancity/assets/img/buttonSignaler.png" alt=""></a>';
+    echo '<a href=""><img id="img-button" src="C:/wamp/www/mycleancity-hackathon/mycleancity/assets/img/buttonDoublon.png" alt=""></a>';
+    echo '</div>';
     echo '</div>';
     echo '</div>';
     echo '</div>';
