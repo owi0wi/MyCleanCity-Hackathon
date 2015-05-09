@@ -51,7 +51,6 @@ class ListRest extends REST_Controller
 				}else{
 					array_push($listing, $reponse);
 				}
-				
 			}
 		}
 	}
@@ -76,7 +75,7 @@ class ListRest extends REST_Controller
   			$doc->$key = $_POST[$key];
   		}
   	}
-  	
+
   	$this->listingModel->update($doc);
   	$this->response(array('reponse' => 'success !'), 200);
   }

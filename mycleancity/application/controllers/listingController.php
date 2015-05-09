@@ -41,7 +41,15 @@ class ListingController extends CI_Controller {
 			if($fkey =='rows'){
 				foreach ($fvalue as $key => $value) {
 					$reponse = $this->listingModel->select($value->id);
-					array_push($listing, $reponse);
+					if(isset($reponse->abus)){
+						if($reponse->abus >= 5){
+
+						}else{
+							array_push($listing, $reponse);
+						}
+					}else{
+						array_push($listing, $reponse);
+					}
 				}
 			}
 		}
@@ -52,7 +60,18 @@ class ListingController extends CI_Controller {
 		$doc = $this->listingModel->select($id);
 		foreach ($_POST as $key => $value) {
 			if($key != 'id'){
-				$doc->$key = $_POST[$key];
+				if($key == 'validation'){
+  					if($value == '0'){
+  						$doc->oui +=1 ;
+  					}elseif($value =='1'){
+  						$doc->non +=1 ;
+  					}elseif($value == '2'){
+  						$doc->dejavue +=1 ;
+  					}elseif($value =='3'){
+  						$doc->abus += 1;
+  					}
+  				}
+  			$doc->$key = $_POST[$key];
 			}
 		}
 		$this->listingModel->update($doc);
