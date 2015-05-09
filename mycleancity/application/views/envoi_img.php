@@ -14,13 +14,13 @@
         					<!-- Wrapper for slides -->
         					<div class="carousel-inner">
         						<div class="item active">
-        							<img class="img-responsive img-full" src="/mycleancity-hackathon/mycleancity/assets/img/clip1.jpg" alt="">
+        							<img class="img-responsive img-full" src="/mycleancity-hackathon/mycleancity/assets/img/clip1.png" alt="">
         						</div>
         						<div class="item">
-        							<img class="img-responsive img-full" src="/mycleancity-hackathon/mycleancity/assets/img/clip2.jpg" alt="">
+        							<img class="img-responsive img-full" src="/mycleancity-hackathon/mycleancity/assets/img/clip2.png" alt="">
         						</div>
         						<div class="item">
-        							<img class="img-responsive img-full" src="/mycleancity-hackathon/mycleancity/assets/img/clip3.jpg" alt="">
+        							<img class="img-responsive img-full" src="/mycleancity-hackathon/mycleancity/assets/img/clip3.png" alt="">
         						</div>
         					</div>
 
