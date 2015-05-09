@@ -1,11 +1,7 @@
-        <div class="container">
+        <div class="container">    
         	<div class="row">
         		<div class="box">
         			<div class="col-lg-12">
-        				<hr>
-        				<h2 class="intro-text text-center">My Clean City</h2>
-        				<hr>
-        				<!-- <img class="img-responsive img-border img-left" src="img/im1.jpg" alt=""> -->
         				<hr class="visible-xs">
         				<div id="carousel-example-generic" class="carousel slide">
         					<!-- Indicators -->
@@ -36,13 +32,28 @@
         						<span class="icon-next"></span>
         					</a>
         				</div>
+        				<p>N'avez vous jamais reve d'une ville propre sans dechet ? D'une ville sans tag ?</p>
+        				<p>Le changement peut se faire grace a vous ! Soyez les acteurs de votre ville !</p>
+        				<p>Comment faire ? Prenez une photo d'un lieu delabre ou sale et laisser la communaute decider si il faut y remedier. La photo une fois moderee sera traitee avec la particiaption de la mairie ou par vous !. N'attendez plus !</p>
+        			</div>
+        		</div>
+        	</div>
+        </div>
+        <div class="container">
+        	<div class="row">
+        		<div class="box">
+        			<div class="col-lg-12">
+        				<hr>
+        				<h2 class="intro-text text-center">Ajouter une photo : </h2>
+        				<hr>
+        				<!-- <img class="img-responsive img-border img-left" src="img/im1.jpg" alt=""> -->
+
         				<form enctype="multipart/form-data" action="http://localhost/mycleancity-hackathon/mycleancity/index.php/uploadController/dataPushed" method="post">
         					<input type="hidden" name="MAX_FILE_SIZE" value="7000000" />
         					<input type="file" name="picture" size=50 /><br>
         					Cle : <input type="text" name="data"/><br>
         					<input type="submit" value="Envoyer" />
         				</form>
-        				<p><a href="http://localhost/frames/CodeIgniter/index.php/main/view_image">Liste</a></p>
         			</div>
         		</div>
         	</div>
