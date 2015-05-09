@@ -18,6 +18,7 @@ require APPPATH.'/libraries/REST_Controller.php';
 
 class UploadRest extends REST_Controller
 {
+	
 	function __construct()
     {
         // Construct our parent class
@@ -30,14 +31,12 @@ class UploadRest extends REST_Controller
         $this->methods['user_post']['limit'] = 100; //100 requests per hour per user/key
         $this->methods['user_delete']['limit'] = 50; //50 requests per hour per user/key
     }
-    
-    function test_get(){
-        $this->response(json_encode(array("bonjour" => "essai")), 200);
-   }
 
    function upload_post(){
-   	$destination = "c:/wamp/www/MCC/mycleancity/pictures/test.jpg";
-   	print_r($_FILES);
+   	$destination = "c:/wamp/www/MCC/mycleancity/pictures/";
+   	$extension = ".png";
+	$nbPictures = 0;
+   	print_r($_POST);
    		//if($_POST){
 			// $ret = false;
 			$img_blob = '';
@@ -45,15 +44,22 @@ class UploadRest extends REST_Controller
 			$img_type = '';
 			$img_nom = '';
 			
+			if($dossier = opendir($destination)){
+				while(false !== ($fichier = readdir($dossier))){
+					if($fichier != '.' && $fichier != '..'){
+						$nbPictures +=1;
+					}
+				}	
+			}
 
-			// Le fichier a bien été reçu
+			$destination .= "clean".$nbPictures.$extension;	
 			$img_taille = $_FILES['fic']['size'];
 			$img_type = $_FILES['fic']['type'];
 			$img_nom = $_FILES['fic']['name'];
 			if(move_uploaded_file ( $_FILES['fic']['tmp_name'] ,$destination)){
-				//$this->$nbPictures += 1;
+				$nbPictures += 1;
 				//$this->uploadModel->insert();
-				$this->response(json_encode(array("bonjour" => "essai")), 200);
+				$this->response(json_encode(array('bonjour' => 'essai')), 200);
 			}
 			
 		//}
