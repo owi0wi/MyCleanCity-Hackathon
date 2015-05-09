@@ -31,7 +31,7 @@ class ListingModel extends CI_Model {
 		return null;
 	}
 
-	function update($doc, $id){
+	function update($doc){
 		$new_doc = new stdClass();
 		foreach($doc as $key => $value){
 			$new_doc->$key = $value;
