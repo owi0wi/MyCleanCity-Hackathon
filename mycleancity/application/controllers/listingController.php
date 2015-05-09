@@ -20,46 +20,19 @@ class ListingController extends CI_Controller {
 	 public function __construct()
 	 {
 	 	parent::__construct();
-	 	$this->load->model('uploadModel');
+	 	$this->load->model('listingModel');
 	 }
 	 
 	public function index()
 	{
-		$this->load->view('envoi_img');
+		$data['list'] = $this->listingModel->selectAll();
+		//$data['list'] = 'lolilol';
+
+		$this->load->view('header');
+		$this->load->view('listingView', $data);
+		$this->load->view('footer');
 	
 	}
-	
-	public function dataPushed()
-	{
 
-		$destination = "C:/wamp/www/mycleancity-hackathon/mycleancity/pictures/";
-   	$insertDestination = 'c:/wamp/www/mycleancity-hackathon/mycleancity/pictures/clean';
-   	//$destination = "C:/wamp/www/MCC/mycleancity/pictures/";
-   	//$insertDestination = 'c:/wamp/www/MCC/mycleancity/pictures/clean';
-   	$extension = ".png";
-	$nbPictures = 0;
-   	if($_POST && $_FILES){	
-		if($dossier = opendir($destination)){
-			while(false !== ($fichier = readdir($dossier))){
-				if($fichier != '.' && $fichier != '..'){
-					$nbPictures +=1;
-				}
-			}	
-		}
-		$destination .= "clean".$nbPictures.$extension;
-		$insertDestination .= $nbPictures.$extension;
-
-		$json = json_encode($_POST);
-		print_r(json_decode($json));
-		$_POST["path"] = $insertDestination;
-
-		$img_taille = $_FILES['picture']['size'];
-		$img_type = $_FILES['picture']['type'];
-		$img_nom = $_FILES['picture']['name'];
-		if(move_uploaded_file ( $_FILES['picture']['tmp_name'] ,$destination)){
-			$nbPictures += 1;
-			$this->uploadModel->insert(json_encode($_POST));
-		}
-	}
 }
 ?>
