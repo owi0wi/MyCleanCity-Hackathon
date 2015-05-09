@@ -22,7 +22,7 @@ abstract class REST_Controller extends CI_Controller
      *
      * @var string|NULL
      */
-    protected $rest_format          = NULL;
+    protected $rest_format          = 'json';
 
     /**
      * Defines the list of method properties such as limit, log and level
@@ -950,7 +950,7 @@ abstract class REST_Controller extends CI_Controller
     protected function _parse_get()
     {
         // Fix for Issue #247
-        if (is_cli()) {
+        if ($this->input->is_cli_request()) {
             $args = $_SERVER['argv'];
             unset($args[0]);
             $_SERVER['QUERY_STRING'] =  $_SERVER['PATH_INFO'] = $_SERVER['REQUEST_URI'] = '/' . implode('/', $args) . '/';
