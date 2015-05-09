@@ -109,6 +109,32 @@ class ListingController extends CI_Controller {
 
 			function trierList() {
 				
+				if($_POST) {
+					$data['list'] = $this->listing();
+					//Faire le tri ici
+					switch ($_POST["tri"]) {
+						case 'plusRecent':
+						//rien a faire deja au par recent
+							break;
+						case 'plusPrio':
+						
+							break;
+						case 'moinsPrio':
+						
+							break;
+						case 'parType':
+						
+							break;
+						
+						default:
+							# code...
+							break;
+					}
+
+					$this->load->view('header');
+					$this->load->view('listingView', $data);
+					$this->load->view('footer');
+				}
 			}
 		}
 		?>
