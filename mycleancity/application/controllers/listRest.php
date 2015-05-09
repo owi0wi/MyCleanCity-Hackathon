@@ -34,7 +34,7 @@ class ListRest extends REST_Controller
         $this->load->model('uploadModel');
        
     }
-  }
+
   function listing_post(){
   	$list = $this->listingModel->selectAll();
   	$listing = array();
@@ -64,3 +64,4 @@ class ListRest extends REST_Controller
   	$this->listingModel->delete($doc);
   	$this->response(array('reponse' => 'success !'), 200);
   }
+ }
