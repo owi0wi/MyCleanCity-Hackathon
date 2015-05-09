@@ -16,7 +16,7 @@
 // This can be removed if you use __autoload() in config.php OR use Modular Extensions
 require APPPATH.'/libraries/REST_Controller.php';
 
-class UploadRest extends REST_Controller
+class ListRest extends REST_Controller
 {
 	
 	function __construct()
@@ -63,5 +63,6 @@ class UploadRest extends REST_Controller
 			$this->uploadModel->insert(json_encode($_POST));
 			$this->response(json_encode(array('reponse' => 'ok')), 200);
 		}
-   }
+	}
+  }
 }

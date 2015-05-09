@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class UploadController extends CI_Controller {
+class ListingController extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -25,9 +25,8 @@ class UploadController extends CI_Controller {
 	 
 	public function index()
 	{
-		$this->load->view('header');
 		$this->load->view('envoi_img');
-		$this->load->view('footer');
+	
 	}
 	
 	public function dataPushed()
