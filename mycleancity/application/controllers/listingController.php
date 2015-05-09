@@ -118,6 +118,9 @@ class ListingController extends CI_Controller {
 						case 'plusRecent':
 						//rien a faire deja par recent
 							break;
+						case 'moinsRecent':
+							$data['list'] = array_reverse($data['list']);
+							break;
 						case 'plusPrio':
 							foreach ($data['list'] as $key => $objet) {
 								$prio[$key]  = $objet->numPrio;

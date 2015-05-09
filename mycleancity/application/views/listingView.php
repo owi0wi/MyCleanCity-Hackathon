@@ -9,6 +9,7 @@
                     <p> Trier par : 
                          <select name="tri">
                             <option value="plusRecent" selected="selected">Plus recent</option>
+                            <option value="moinsRecent">Moins recent</option>
                             <option value="plusPrio">Plus prioritaire</option>
                             <option value="moinsPrio">Moins prioritaire</option>
                             <option value="parTypeAlpha">Type (alphabetique)</option>
