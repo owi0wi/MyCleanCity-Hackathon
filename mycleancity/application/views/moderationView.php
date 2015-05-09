@@ -43,8 +43,8 @@ if (!empty($list)) {
 // Provide your access token
 L.mapbox.accessToken = 'pk.eyJ1Ijoibm91eCIsImEiOiJyY0xMaUpVIn0.Wf6E2HX12J5M-XvIGlaA_g';
 // Create a map in the div #map
-L.mapbox.map('map', 'noux.11d3b148').setView([<?php echo $objet->lon; ?>, <?php echo $objet->lat; ?>], 9);;
-L.marker([<?php echo $objet->lon; ?>, <?php echo $objet->lat; ?>], {
+L.mapbox.map('map', 'noux.11d3b148').setView([<?php echo $objet->lat; ?>, <?php echo $objet->lon; ?>], 15);;
+L.marker([<?php echo $objet->lat; ?>, <?php echo $objet->lon; ?>], {
     icon: L.mapbox.marker.icon({
         'marker-size': 'large',
         'marker-symbol': 'bus',
