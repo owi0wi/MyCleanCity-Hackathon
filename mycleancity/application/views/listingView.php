@@ -11,7 +11,7 @@
 </div>
 
 <?php
-if (empty($list)) {
+if (!empty($list)) {
     foreach ($list as $cleList => $objet) {
 
         echo '<div class="container">    ';

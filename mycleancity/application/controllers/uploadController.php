@@ -30,11 +30,11 @@ class UploadController extends CI_Controller {
 		$this->load->view('footer');
 	}
 	
-	public function dataPushed()
+	public function upload()
 	{
 
 	$destination = "C:/wamp/www/mycleancity-hackathon/mycleancity/pictures/";
-   	$insertDestination = 'http://localhost/mycleancity-hackathon/mycleancity/pictures/clean';
+   	$insertDestination = 'http://192.168.43.166/mycleancity-hackathon/mycleancity/pictures/clean';
    	//$destination = "C:/wamp/www/MCC/mycleancity/pictures/";
    	//$insertDestination = 'c:/wamp/www/MCC/mycleancity/pictures/clean';
    	$extension = ".png";
