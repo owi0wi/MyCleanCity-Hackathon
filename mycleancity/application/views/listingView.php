@@ -5,6 +5,17 @@
                 <hr>
                 <h2 class="intro-text text-center">Liste des problemes remarques</h2>
                 <hr>
+                <form enctype="multipart/form-data" action="http://localhost/mycleancity-hackathon/mycleancity/index.php/uploadController/upload" method="post">
+                    <p> Trier par : 
+                         <select name="tri">
+                            <option value="plusRecent" selected="selected">Plus recent</option>
+                            <option value="plusPrio">Plus prioritaire</option>
+                            <option value="moinsPrio">Moins prioritaire</option>
+                            <option value="parType">Type</option>
+                        </select>
+                        <input type="submit" value="Afficher" />
+                    </p> 
+                </form>
             </div>
         </div>
     </div>
