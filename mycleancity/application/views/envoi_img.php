@@ -49,7 +49,7 @@
         				<!-- <img class="img-responsive img-border img-left" src="img/im1.jpg" alt=""> -->
 
         				<form enctype="multipart/form-data" action="http://localhost/mycleancity-hackathon/mycleancity/index.php/uploadController/upload" method="post">
-        				<input type="hidden" name="user" value="1" />
+        				<input type="hidden" name="user" value="2" />
                         <input type="hidden" name="lon" value="12" />
                         <input type="hidden" name="lat" value="34" />
         				<p><input type="file" name="picture" size=50 /></p>

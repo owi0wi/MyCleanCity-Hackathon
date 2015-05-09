@@ -72,8 +72,7 @@ class ModerationController extends CI_Controller {
 						}
 					}
 				}
-				array_reverse($listing);
-				return $listing;
+				return array_reverse($listing);
 			}
 
 		}
