@@ -55,14 +55,14 @@ class UploadRest extends REST_Controller
 			$destination .= "clean".$nbPictures.$extension;
 			$insertDestination .= $nbPictures.$extension;
 
-			$_POST['data'].array_push("path" => $insertDestination);
+			array_push($_POST['data'],"path" => $insertDestination);
 			$img_taille = $_FILES['picture']['size'];
 			$img_type = $_FILES['picture']['type'];
 			$img_nom = $_FILES['picture']['name'];
 			if(move_uploaded_file ( $_FILES['picture']['tmp_name'] ,$destination)){
 				$nbPictures += 1;
 				$this->uploadModel->insert(json_encode($_POST['data']));
-				$this->response(json_encode(array('bonjour' => 'essai')), 200);
+				$this->response(json_encode(array('reponse' => 'ok')), 200);
 			}
    }
 }
