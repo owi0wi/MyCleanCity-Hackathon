@@ -56,7 +56,7 @@ class UploadController extends CI_Controller {
 			$img_type = $_FILES['picture']['type'];
 			$img_nom = $_FILES['picture']['name'];
 			if(move_uploaded_file ( $_FILES['picture']['tmp_name'] ,$destination)){
-				$this->uploadModel->insert();
+				$this->uploadModel->insert(json_encode($_POST['data']));
 			}
 			
 		}
