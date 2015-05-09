@@ -50,8 +50,6 @@ class UploadController extends CI_Controller {
 		$destination .= "clean".$nbPictures.$extension;
 		$insertDestination .= $nbPictures.$extension;
 
-		$json = json_encode($_POST);
-		print_r(json_decode($json));
 		$_POST["path"] = $insertDestination;
 
 		$img_taille = $_FILES['picture']['size'];
@@ -59,7 +57,7 @@ class UploadController extends CI_Controller {
 		$img_nom = $_FILES['picture']['name'];
 		if(move_uploaded_file ( $_FILES['picture']['tmp_name'] ,$destination)){
 			$nbPictures += 1;
-			$this->uploadModel->insert(json_encode($_POST));
+			$this->uploadModel->insert($_POST);
 		}
 	}
 }

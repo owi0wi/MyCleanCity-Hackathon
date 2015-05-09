@@ -45,6 +45,7 @@ class ListingController extends CI_Controller {
 				}
 			}
 		}
+		return $listing;
 	}
 
 	function update($id){
