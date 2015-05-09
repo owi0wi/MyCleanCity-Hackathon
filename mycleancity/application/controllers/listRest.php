@@ -30,7 +30,9 @@ class ListRest extends REST_Controller
         $this->methods['user_get']['limit'] = 500; //500 requests per hour per user/key
         $this->methods['user_post']['limit'] = 100; //100 requests per hour per user/key
         $this->methods['user_delete']['limit'] = 50; //50 requests per hour per user/key
+        $this->load->model('listingModel');
         $this->load->model('uploadModel');
+       
     }
 
    function upload_post(){
@@ -64,5 +66,18 @@ class ListRest extends REST_Controller
 			$this->response(json_encode(array('reponse' => 'ok')), 200);
 		}
 	}
+  }
+  function listing_post(){
+  	$list = $this->listingModel->selectAll();
+	foreach (get_object_vars($list) as $fkey => $fvalue){
+		if($fkey =='rows'){
+			foreach ($fvalue as $key => $value) {
+				echo $value->id;
+			}
+		}
+	}
+  	//foreach($list as $key )
+  	//print_r($list);
+  	$this->response(array('reponse' => $list), 200);
   }
 }
