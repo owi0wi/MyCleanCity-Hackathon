@@ -32,7 +32,7 @@ class ListingModel extends CI_Model {
 	}
 
 	function update(){
-
+			
 	}
 
 }

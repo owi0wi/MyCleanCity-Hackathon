@@ -69,15 +69,15 @@ class ListRest extends REST_Controller
   }
   function listing_post(){
   	$list = $this->listingModel->selectAll();
+  	$listing = array();
 	foreach (get_object_vars($list) as $fkey => $fvalue){
 		if($fkey =='rows'){
 			foreach ($fvalue as $key => $value) {
-				echo $value->id;
+				$reponse = $this->listingModel->select($value->id);
+				array_push($listing, $reponse);
 			}
 		}
 	}
-  	//foreach($list as $key )
-  	//print_r($list);
-  	$this->response(array('reponse' => $list), 200);
+  	$this->response(array('reponse' => $listing), 200);
   }
 }
