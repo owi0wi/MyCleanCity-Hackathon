@@ -10,7 +10,7 @@ class UploadModel extends CI_Model {
 	    
 	function insert($json){
 	    $new_doc = new stdClass();
-	    $new_doc->clean = ;
+	    $new_doc->clean = $json;
 	   	$tables = new couchClient('http://localhost:5984/','mycleancity');
 	    	 
 	 	try {

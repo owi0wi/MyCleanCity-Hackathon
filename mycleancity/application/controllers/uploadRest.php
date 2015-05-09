@@ -35,10 +35,9 @@ class UploadRest extends REST_Controller
 
    function upload_post(){
    	$destination = "c:/wamp/www/MCC/mycleancity/pictures/";
+   	$insertDestination = 'http://localhost/MCC/mycleancity/pictures/clean';
    	$extension = ".png";
 	$nbPictures = 0;
-   	print_r(json_encode($_POST));
-   	print_r(json_encode($_FILES));
    		//if($_POST){
 			// $ret = false;
 			$img_blob = '';
@@ -53,13 +52,16 @@ class UploadRest extends REST_Controller
 					}
 				}	
 			}
-			$destination .= "clean".$nbPictures.$extension;	
+			$destination .= "clean".$nbPictures.$extension;
+			$insertDestination .= $nbPictures.$extension;
+
+			$_POST['data'].array_push("path" => $insertDestination);
 			$img_taille = $_FILES['picture']['size'];
 			$img_type = $_FILES['picture']['type'];
 			$img_nom = $_FILES['picture']['name'];
 			if(move_uploaded_file ( $_FILES['picture']['tmp_name'] ,$destination)){
 				$nbPictures += 1;
-				$this->uploadModel->insert(json_encode($_POST));
+				$this->uploadModel->insert(json_encode($_POST['data']));
 				$this->response(json_encode(array('bonjour' => 'essai')), 200);
 			}
    }
