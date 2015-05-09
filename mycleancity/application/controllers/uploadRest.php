@@ -34,10 +34,10 @@ class UploadRest extends REST_Controller
     }
 
    function upload_post(){
-   	//$destination = "C:/wamp/www/mycleancity-hackathon/mycleancity/pictures/";
-   	//$insertDestination = 'c:/wamp/www/mycleancity-hackathon/mycleancity/pictures/clean';
-   	$destination = "C:/wamp/www/MCC/mycleancity/pictures/";
-   	$insertDestination = 'c:/wamp/www/MCC/mycleancity/pictures/clean';
+   	$destination = "C:/wamp/www/mycleancity-hackathon/mycleancity/pictures/";
+   	$insertDestination = 'c:/wamp/www/mycleancity-hackathon/mycleancity/pictures/clean';
+   	//$destination = "C:/wamp/www/MCC/mycleancity/pictures/";
+   	//$insertDestination = 'c:/wamp/www/MCC/mycleancity/pictures/clean';
    	$extension = ".png";
 	$nbPictures = 0;
    	if($_POST && $_FILES){	
