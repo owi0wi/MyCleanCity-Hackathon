@@ -94,9 +94,7 @@ class ListingController extends CI_Controller {
 							}elseif($value =='1'){
 								$doc->non +=1 ;
 							}elseif($value == '2'){
-								$doc->dejavue +=1 ;
-							}elseif($value =='3'){
-								$doc->abus += 1;
+								$doc->abus +=1 ;
 							}
 						}
 						$doc->$key = $_POST[$key];
