@@ -17,10 +17,12 @@ class UploadController extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
+	public $nbPictures;
 	 public function __construct()
 	 {
 	 	parent::__construct();
-	 	
+	 	$this->load->model('uploadModel');
+	 	$this->$nbPictures = 0;
 	 }
 	 
 	public function index()
@@ -29,28 +31,30 @@ class UploadController extends CI_Controller {
 	
 	}
 	
-	public function reponse()
+	public function dataPushed()
 	{
 
-		$destination = "c:/wamp/www/mycleancity-hackathon/mycleancity/pictures/test.jpg";
+		//$destination = "c:/wamp/www/mycleancity-hackathon/mycleancity/pictures/test.jpg";
+		$destination = "c:/wamp/www/MCC/mycleancity/pictures/test.jpg";
 
-		if(isset($_POST)){
+
+		if($_POST){
 			// $ret = false;
 			$img_blob = '';
 			$img_taille = 0;
 			$img_type = '';
 			$img_nom = '';
 			
-			$image = $this->input->post('fic', true);
-			echo "files:";
-			 print_r($_FILES);
-			 echo "post:";
-			 print_r($_POST);
+
 			// Le fichier a bien été reçu
 			$img_taille = $_FILES['fic']['size'];
 			$img_type = $_FILES['fic']['type'];
 			$img_nom = $_FILES['fic']['name'];
-			move_uploaded_file ( $_FILES['fic']['tmp_name'] ,$destination);
+			if(move_uploaded_file ( $_FILES['fic']['tmp_name'] ,$destination)){
+				$this->$nbPictures += 1;
+				$this->uploadModel->insert();
+			}
+			
 		}
 	}
 }

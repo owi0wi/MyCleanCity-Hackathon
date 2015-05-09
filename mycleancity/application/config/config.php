@@ -16,7 +16,7 @@
 | environments.
 |
 */
-$config['base_url'] = 'http://localhost/mycleancity-hackathon/mycleancity';
+$config['base_url'] = 'http://localhost/MCC/mycleancity';
 
 /*
 |--------------------------------------------------------------------------
