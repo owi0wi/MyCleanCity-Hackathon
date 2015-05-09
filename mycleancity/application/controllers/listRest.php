@@ -54,8 +54,9 @@ class ListRest extends REST_Controller
 			}
 		}
 	}
-  	$this->response(array('reponse' => $listing), 200);
-  }
+  array_reverse($listing);
+  $this->response(array('reponse' => $listing), 200);
+}
 
   function update_post(){
   	$doc = $this->listingModel->select($_POST['id']);
