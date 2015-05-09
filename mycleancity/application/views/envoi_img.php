@@ -65,7 +65,10 @@
                                 <option value="2">Forte</option>
                             </select>
                         </p>
-        				<p>Commentaire : <input type="text" name="data"/></p>
+        				<p>Commentaire :</p>
+                        <p>    
+                            <textarea name="commentaire" id="com" rows="6" cols="40"></textarea>  
+                        </p>
                         <input type="submit" value="Envoyer" />
                     </form>
                 </div>
