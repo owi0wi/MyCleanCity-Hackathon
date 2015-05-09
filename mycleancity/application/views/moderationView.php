@@ -40,9 +40,11 @@ if (!empty($list)) {
 }
 ?>
 <script>
-        var map = L.map('map').setView([51.505, -0.09], 13);
-        L.tileLayer('http://{s}.tiles.mapbox.com/v3/MapID/{z}/{x}/{y}.png', {
+    L.mapbox.accessToken = 'pk.eyJ1Ijoibm91eCIsImEiOiJyY0xMaUpVIn0.Wf6E2HX12J5M-XvIGlaA_g'; 
+    var map = L.map('map').setView([51.505, -0.09], 13);
+     /*   //http://{s}.tiles.mapbox.com/v3/MapID/{z}/{x}/{y}.png' 
+        L.tileLayer('https://a.tiles.mapbox.com/v4/noux.m502338o/page.html?access_token=#2/-22.4/24.3', {
         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
         maxZoom: 18
-        }).addTo(map);
+        }).addTo(map);*/
 </script>
