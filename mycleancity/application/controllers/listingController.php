@@ -117,13 +117,25 @@ class ListingController extends CI_Controller {
 						//rien a faire deja au par recent
 							break;
 						case 'plusPrio':
-						
+							foreach ($data['list'] as $key => $objet) {
+								$prio[$key]  = $objet->priorite;
+							}
+							$array_lowercase = array_map('strtolower', $prio);
+							array_multisort($array_lowercase, SORT_ASC, $data['list']);
 							break;
 						case 'moinsPrio':
-						
+							foreach ($data['list'] as $key => $objet) {
+								$prio[$key]  = $objet->priorite;
+							}
+							$array_lowercase = array_map('strtolower', $prio);
+							array_multisort($array_lowercase, SORT_DESC, $data['list']);
 							break;
 						case 'parType':
-						
+							foreach ($data['list'] as $key => $objet) {
+								$typee[$key]  = $objet->type;
+							}
+							$array_lowercase = array_map('strtolower', $typee);
+							array_multisort($array_lowercase, SORT_ASC, $data['list']);
 							break;
 						
 						default:
