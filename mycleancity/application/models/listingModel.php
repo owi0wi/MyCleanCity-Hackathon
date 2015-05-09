@@ -39,7 +39,7 @@ class ListingModel extends CI_Model {
 		$tables = new couchClient('http://localhost:5984/','mycleancity');
 
 		try{
-			$update = $tables->updateDoc($doc, $id);
+			$update = $tables->storeDoc($doc);
 		}catch (Exception $e) {
     		echo "ERROR: ".$e->getMessage()." (".$e->getCode().")<br>\n";
 		}
