@@ -31,9 +31,27 @@ class ListingModel extends CI_Model {
 		return null;
 	}
 
-	function update(){
-			
+	function update($doc){
+		$new_doc = new stdClass();
+		foreach($doc as $key => $value){
+			$new_doc->$key = $value;
+		}
+		$tables = new couchClient('http://localhost:5984/','mycleancity');
+
+		try{
+			$update = $tables->storeDoc($doc);
+		}catch (Exception $e) {
+    		echo "ERROR: ".$e->getMessage()." (".$e->getCode().")<br>\n";
+		}
 	}
 
+	function delete($doc){
+		$tables = new couchClient('http://localhost:5984/','mycleancity');
+		try{
+			$delete = $tables->deleteDoc($doc);
+		}catch (Exception $e) {
+    		echo "ERROR: ".$e->getMessage()." (".$e->getCode().")<br>\n";
+		}
+	}
 }
 ?>

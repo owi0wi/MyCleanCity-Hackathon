@@ -36,10 +36,10 @@ class ListRest extends REST_Controller
     }
 
    function upload_post(){
-   	$destination = "C:/wamp/www/mycleancity-hackathon/mycleancity/pictures/";
-   	$insertDestination = 'c:/wamp/www/mycleancity-hackathon/mycleancity/pictures/clean';
-   	//$destination = "C:/wamp/www/MCC/mycleancity/pictures/";
-   	//$insertDestination = 'c:/wamp/www/MCC/mycleancity/pictures/clean';
+   	//$destination = "C:/wamp/www/mycleancity-hackathon/mycleancity/pictures/";
+   	//$insertDestination = 'c:/wamp/www/mycleancity-hackathon/mycleancity/pictures/clean';
+   	$destination = "C:/wamp/www/MCC/mycleancity/pictures/";
+   	$insertDestination = 'c:/wamp/www/MCC/mycleancity/pictures/clean';
    	$extension = ".png";
 	$nbPictures = 0;
    	if($_POST && $_FILES){	
@@ -79,5 +79,21 @@ class ListRest extends REST_Controller
 		}
 	}
   	$this->response(array('reponse' => $listing), 200);
+  }
+
+  function update_post(){
+  	$doc = $this->listingModel->select($_POST['id']);
+  	foreach ($_POST as $key => $value) {
+  		if($key != 'id'){
+  			$doc->$key = $_POST[$key];
+  		}
+  	}
+  	$this->listingModel->update($doc);
+  	$this->response(array('reponse' => 'success !'), 200);
+  }
+  function delete_post(){
+  	$doc = $this->listingModel->select($_POST['id']);
+  	$this->listingModel->delete($doc);
+  	$this->response(array('reponse' => 'success !'), 200);
   }
 }
