@@ -43,5 +43,5 @@ if (!empty($list)) {
 // Provide your access token
 L.mapbox.accessToken = 'pk.eyJ1Ijoibm91eCIsImEiOiJyY0xMaUpVIn0.Wf6E2HX12J5M-XvIGlaA_g';
 // Create a map in the div #map
-L.mapbox.map('map', 'noux.11d3b148').setView([40, -74.50], 9);;
+L.mapbox.map('map', 'noux.11d3b148').setView([<?php echo $objet->lon; ?>, <?php echo $objet->lat; ?>], 9);;
 </script>
