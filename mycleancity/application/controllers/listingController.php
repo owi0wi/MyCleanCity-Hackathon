@@ -26,8 +26,9 @@ class ListingController extends CI_Controller {
 	public function index()
 	{
 		$data['list'] = $this->listing();
+		$data['numPage'] = 2;
 
-		$this->load->view('header');
+		$this->load->view('header', $data);
 		$this->load->view('listingView', $data);
 		$this->load->view('footer');
 

@@ -1,3 +1,26 @@
+<?php
+    $p1='';
+    $p2='';
+    $p3='';
+    switch ($numPage) {
+        case '0':
+            $p0 = ' style=\"font-weight: bold\"';
+            break;
+        case '1':
+            $p1 = ' style=\"font-weight: bold\"';
+            break;
+        case '2':
+            $p2 = ' style=\"font-weight: bold\"';
+            break;
+
+        default:
+            break;
+    }
+    echo $p1;
+    echo $p2;
+    echo $p3;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

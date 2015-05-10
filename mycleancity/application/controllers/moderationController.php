@@ -26,9 +26,9 @@ class ModerationController extends CI_Controller {
 	public function index()
 	{
 		$data['list'] = $this->listing();
+		$data['numPage'] = 1;
 
-
-		$this->load->view('header');
+		$this->load->view('header', $data);
 		$this->load->view('moderationView', $data);
 		$this->load->view('footer');
 	}
