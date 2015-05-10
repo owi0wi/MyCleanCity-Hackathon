@@ -13,6 +13,24 @@
 <?php
 if (!empty($list)) {
     foreach ($list as $cleList => $objet) {
+        //pour les oui de la communaute
+        if(isset($objet->oui)) {
+            $numOui = $objet->oui;
+        }else {
+            $numOui = 0;
+        }
+        //pour les non de la communaute
+        if(isset($objet->non)) {
+            $numNon = $objet->non;
+        }else {
+            $numNon = 0;
+        }
+        //pour les abus de la communaute
+        if(isset($objet->abus)) {
+            $numAbus = $objet->abus;
+        }else {
+            $numAbus = 0;
+        }
 
         echo '<div class="container">    ';
         echo '<div class="row">';
@@ -21,18 +39,17 @@ if (!empty($list)) {
         echo '<img class="img-responsive img-border img-left" src="'. $objet->path .'" alt="">';
         echo '<hr class="visible-xs">';
         echo '<div id="map"></div>';
-        //echo '<p><strong>Coordonnees</strong> : Longitude :  '.$objet->lon.' | Latitude : '.$objet->lat.'</p>';
         echo '<p><strong>Ordre de priorite</strong> : '.$objet->priorite.'</p>';
         echo '<p><strong>Type</strong> : '.$objet->type.'</p>';
         echo '<hr>';
         echo '<p><strong>Commentaire </strong> : '.$objet->commentaire.'</p>';
         echo '<div class="col-button">';
         echo '<div id="idblock"><a href=""><img class="img-responsive" id="img-button" src="/mycleancity-hackathon/mycleancity/assets/img/buttonYes.png" alt=""></a>';
-        echo '<p id="pblock">0 oui</p></div>';
+        echo '<p id="pblock">'.$numOui.' oui</p></div>';
         echo '<div id="idblock"><a href=""><img class="img-responsive" id="img-button" src="/mycleancity-hackathon/mycleancity/assets/img/buttonNo.png" alt=""></a>';
-        echo '<p id="pblock">0 non</p></div>';
+        echo '<p id="pblock">'.$numNon.' non</p></div>';
         echo '<div id="idblock"><a href=""><img class="img-responsive" id="img-button" src="/mycleancity-hackathon/mycleancity/assets/img/buttonSignaler.png" alt=""></a>';
-        echo '<p id="pblock">1 abus</p></div>';
+        echo '<p id="pblock">'.$numAbus.' abus</p></div>';
 
         echo '</div>';
         echo '</div>';
