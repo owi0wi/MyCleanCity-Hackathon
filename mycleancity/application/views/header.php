@@ -16,9 +16,6 @@
         default:
             break;
     }
-    echo $p1;
-    echo $p2;
-    echo $p3;
 ?>
 
 <!DOCTYPE html>
