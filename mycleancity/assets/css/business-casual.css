@@ -229,8 +229,8 @@ footer p {
 #img-button {
     float: left;
     margin-right: 20px;
-    width: 150px;
-    height: auto;
+    width: 100px;
+    height: 50px;
 }
 
 .col-button {
@@ -238,7 +238,7 @@ footer p {
     width: 100%;
     float: left;
     margin-top: 10px;
-    margin-left: 60px;
+    margin-left: auto;
 }
 #map {
     height: 180px;
@@ -249,5 +249,5 @@ footer p {
 }
 
 #pblock {
-    margin-left: 50px
+    margin-left: 25px
 }

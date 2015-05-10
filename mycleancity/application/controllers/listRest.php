@@ -76,7 +76,7 @@ class ListRest extends REST_Controller
   	}
 
   	$this->listingModel->update($doc);
-  	$this->response(array('reponse' => select($this->listingModel->select($_POST['id']))), 200);
+  	$this->response(array('reponse' => $this->listingModel->select($_POST['id'])), 200);
   }
   function delete_post(){
   	$doc = $this->listingModel->select($_POST['id']);
