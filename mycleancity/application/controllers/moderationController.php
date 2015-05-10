@@ -133,12 +133,6 @@ function listing(){
 			}
 
 
-
-
-
-
-
-
 			function delete($id){
 				$doc = $this->listingModel->select($id);
 				$this->listingModel->delete($doc);
