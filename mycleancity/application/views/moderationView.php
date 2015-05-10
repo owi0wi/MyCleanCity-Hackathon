@@ -64,6 +64,16 @@ if (!empty($list)) {
 L.mapbox.accessToken = 'pk.eyJ1Ijoibm91eCIsImEiOiJyY0xMaUpVIn0.Wf6E2HX12J5M-XvIGlaA_g';
 // Create a map in the div #map
 var map = L.mapbox.map('map', 'noux.11d3b148').setView([<?php echo $objet->lat; ?>, <?php echo $objet->lon; ?>], 15);;
+var marker = L.icon({
+    iconUrl: 'markers.png',
+    shadowUrl: 'leaf-shadow.png',
+
+    iconSize:     [38, 95], // size of the icon
+    shadowSize:   [50, 64], // size of the shadow
+    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+    shadowAnchor: [4, 62],  // the same for the shadow
+    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
 L.mapbox.featureLayer({
     // this feature is in the GeoJSON format: see geojson.org
     // for the full specification
@@ -84,7 +94,7 @@ L.mapbox.featureLayer({
         // https://www.mapbox.com/guides/an-open-platform/#simplestyle
         'marker-size': 'large',
         'marker-color': '#BE9A6B',
-        'marker-symbol': 'bus'
+        'marker-symbol': marker;
     }
 }).addTo(map);
 </script>
