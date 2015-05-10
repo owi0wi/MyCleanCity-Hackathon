@@ -98,11 +98,11 @@ function listing(){
 							}elseif($doc->validation == '2'){
 								$doc->abus +=1 ;
 							}
-				print_r($doc);
 				$this->listingModel->update($doc);
+								$this->index();
 			}
 
-				function updateVn($id){
+			function updateVn($id){
 				$id = $this->uri->segment(3, 0);
 				$doc = $this->listingModel->select($id);
 				$doc->validation = 1;
@@ -114,7 +114,25 @@ function listing(){
 								$doc->abus +=1 ;
 							}
 				$this->listingModel->update($doc);
+				$this->index();
 			}
+
+			function updateVa($id){
+				$id = $this->uri->segment(3, 0);
+				$doc = $this->listingModel->select($id);
+				$doc->validation = 2;
+							if($doc->validation == '0'){
+								$doc->oui +=1 ;
+							}elseif($doc->validation =='1'){
+								$doc->non +=1 ;
+							}elseif($doc->validation == '2'){
+								$doc->abus +=1 ;
+							}
+				$this->listingModel->update($doc);
+				$this->index();
+			}
+
+
 
 
 
