@@ -32,7 +32,7 @@ if (!empty($list)) {
         echo '<div class="row">';
         echo '<div class="box">';
         echo '<div class="col-lg-12">';
-        echo '<a href="" ><img class="img-responsive img-border img-left" src="'. $objet->path .'" alt=""></a>';
+        echo '<a href="'. $objet->path .'" ><img class="img-responsive img-border img-left" src="'. $objet->path .'" alt=""></a>';
         echo '<hr class="visible-xs">';
         echo '<div id="map'.$i.'" class="map"></div>';
         echo "<script>
