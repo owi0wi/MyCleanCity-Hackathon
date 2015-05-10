@@ -1,16 +1,16 @@
 <?php
+    $p0='';
     $p1='';
     $p2='';
-    $p3='';
     switch ($numPage) {
         case '0':
-            $p0 = ' style=\"font-weight: bold\"';
+            $p0 = ' style="font-weight: bold"';
             break;
         case '1':
-            $p1 = ' style=\"font-weight: bold\"';
+            $p1 = ' style="font-weight: bold"';
             break;
         case '2':
-            $p2 = ' style=\"font-weight: bold\"';
+            $p2 = ' style="font-weight: bold"';
             break;
 
         default:
@@ -78,13 +78,13 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="/mycleancity-hackathon/mycleancity/index.php/uploadController">Accueil</a>
+                        <a href="/mycleancity-hackathon/mycleancity/index.php/uploadController" <?php echo $p0; ?>>Accueil</a>
                     </li>
                     <li>
-                        <a href="/mycleancity-hackathon/mycleancity/index.php/moderationController">Mod&#233;ration</a>
+                        <a href="/mycleancity-hackathon/mycleancity/index.php/moderationController" <?php echo $p1; ?>>Mod&#233;ration</a>
                     </li>
 					<li>
-                        <a href="/mycleancity-hackathon/mycleancity/index.php/listingController">En attente</a>
+                        <a href="/mycleancity-hackathon/mycleancity/index.php/listingController" <?php echo $p2; ?>>En attente</a>
                     </li>
                 </ul>
             </div>
