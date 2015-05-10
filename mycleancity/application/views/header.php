@@ -61,7 +61,7 @@
                         <a href="/mycleancity-hackathon/mycleancity/index.php/moderationController">Mod&#233;ration</a>
                     </li>
 					<li>
-                        <a href="/mycleancity-hackathon/mycleancity/index.php/listingController">Listing</a>
+                        <a href="/mycleancity-hackathon/mycleancity/index.php/listingController">En attente</a>
                     </li>
                 </ul>
             </div>
