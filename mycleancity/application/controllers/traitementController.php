@@ -25,7 +25,9 @@ class UploadController extends CI_Controller {
 	 
 	public function index()
 	{
-		$this->load->view('header');
+		$data['numPage'] = 0;
+
+		$this->load->view('header', $data);
 		$this->load->view('envoi_img');
 		$this->load->view('footer');
 	}
