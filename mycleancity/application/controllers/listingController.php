@@ -40,7 +40,7 @@ class ListingController extends CI_Controller {
 			if($fkey =='rows'){
 				foreach ($fvalue as $key => $value) {
 					$reponse = $this->listingModel->select($value->id);
-					if(isset($reponse->priorite))
+					if(isset($reponse->priorite)){
 						switch ($reponse->priorite) {
 							case '0':
 							$reponse->numPrio='0';
@@ -57,35 +57,35 @@ class ListingController extends CI_Controller {
 							default:
 							break;
 						}
-						if(isset($reponse->type))
-							switch ($reponse->type) {
-								case '0':
-								$reponse->type='Dechet';
-								break;
-								case '1':
-								$reponse->type='Nature';
-								break;
-								case '2':
-								$reponse->type='Infrastructure';
-								break;
-								default:
-								break;
-							}
-							if(isset($reponse->abus)){
-								if($reponse->abus >= 5){
-
-								}else{
-									array_push($listing, $reponse);
-								}
-							}else{
-								array_push($listing, $reponse);
-							}
+					}
+					if(isset($reponse->type)){
+						switch ($reponse->type) {
+							case '0':
+							$reponse->type='Dechet';
+							break;
+							case '1':
+							$reponse->type='Nature';
+							break;
+							case '2':
+							$reponse->type='Infrastructure';
+							break;
+							default:
+							break;
 						}
 					}
+					if(isset($reponse->abus)){
+						if($reponse->abus >= 5){
+						}else{
+							array_push($listing, $reponse);
+						}
+					}else{
+						array_push($listing, $reponse);
+					}
 				}
-
-				return array_reverse($listing);
-			}
+			}	
+		}
+		return array_reverse($listing);
+	}
 
 			function update($id){
 				$doc = $this->listingModel->select($id);

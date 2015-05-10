@@ -25,6 +25,7 @@
 
 <?php
 if (!empty($list)) {
+    $i = 0;
     foreach ($list as $cleList => $objet) {
 
         echo '<div class="container">    ';
@@ -33,6 +34,23 @@ if (!empty($list)) {
         echo '<div class="col-lg-12">';
         echo '<img class="img-responsive img-border img-left" src="'. $objet->path .'" alt="">';
         echo '<hr class="visible-xs">';
+        echo '<div id="map'.$i.'" class="map"></div>';
+        echo "<script>
+            var greenIcon = L.icon({
+    iconUrl: '/mycleancity-hackathon/mycleancity/assets/img/marker.png',
+    shadowUrl: '/mycleancity-hackathon/mycleancity/assets/img/shadow.png',
+    iconSize:     [30, 41], // size of the icon
+    shadowSize:   [30, 41], // size of the shadow
+    iconAnchor:   [".$objet->lat.",".$objet->lon."], // point of the icon which will correspond to marker's location
+    shadowAnchor: [".$objet->lat.",".$objet->lon."],  // the same for the shadow
+    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
+            // Provide your access token
+            L.mapbox.accessToken = 'pk.eyJ1Ijoibm91eCIsImEiOiJyY0xMaUpVIn0.Wf6E2HX12J5M-XvIGlaA_g';
+            // Create a map in the div #map
+            var map = L.mapbox.map('map".$i."', 'noux.11d3b148').setView([".$objet->lat.",".$objet->lon."], 15);
+            L.marker([".$objet->lat.",".$objet->lon."], {icon: greenIcon}).addTo(map);
+</script>";
         //echo '<p><strong>Coordonnees</strong> : Longitude :  '.$objet->lon.' | Latitude : '.$objet->lat.'</p>';
         echo '<p><strong>Ordre de priorite</strong> : '.$objet->priorite.'</p>';
         echo '<p><strong>Type</strong> : '.$objet->type.'</p>';
@@ -42,6 +60,7 @@ if (!empty($list)) {
         echo '</div>';
         echo '</div>';
         echo '</div>';
+        $i++;
     }
 }
 
