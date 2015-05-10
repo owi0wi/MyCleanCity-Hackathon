@@ -65,7 +65,7 @@ if (!empty($list)) {
         echo '<p id="pblock">'.$numOui.' oui</p></div>';
         echo '<div id="idblock"><a href="http://localhost/mycleancity-hackathon/mycleancity/index.php/moderationController/updateVn/'.$objet->_id.'"><img class="img-responsive" id="img-button" src="/mycleancity-hackathon/mycleancity/assets/img/buttonNo.png" alt=""></a>';
         echo '<p id="pblock">'.$numNon.' non</p></div>';
-        echo '<div id="idblock"><a href="http://localhost/mycleancity-hackathon/mycleancity/index.php/moderationController/updateVa/"><img class="img-responsive" id="img-button" src="/mycleancity-hackathon/mycleancity/assets/img/buttonSignaler.png" alt=""></a>';
+        echo '<div id="idblock"><a href="http://localhost/mycleancity-hackathon/mycleancity/index.php/moderationController/updateVa/'.$objet->_id.'"><img class="img-responsive" id="img-button" src="/mycleancity-hackathon/mycleancity/assets/img/buttonSignaler.png" alt=""></a>';
         echo '<p id="pblock">'.$numAbus.' abus</p></div>';
 
         echo '</div>';
