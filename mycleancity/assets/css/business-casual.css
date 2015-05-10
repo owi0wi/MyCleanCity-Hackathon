@@ -243,3 +243,11 @@ footer p {
 #map {
     height: 180px;
 }
+
+#idblock {
+    display : inline-block;
+}
+
+#pblock {
+    margin-left: 50px
+}
