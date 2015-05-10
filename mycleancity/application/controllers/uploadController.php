@@ -58,6 +58,7 @@ class UploadController extends CI_Controller {
 		if(move_uploaded_file ( $_FILES['picture']['tmp_name'] ,$destination)){
 			$nbPictures += 1;
 			$this->uploadModel->insert($_POST);
+			$this->index();
 		}
 	}
 }
