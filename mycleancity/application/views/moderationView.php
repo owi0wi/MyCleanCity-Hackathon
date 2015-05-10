@@ -46,12 +46,28 @@ if (!empty($list)) {
 // Provide your access token
 L.mapbox.accessToken = 'pk.eyJ1Ijoibm91eCIsImEiOiJyY0xMaUpVIn0.Wf6E2HX12J5M-XvIGlaA_g';
 // Create a map in the div #map
-L.mapbox.map('map', 'noux.11d3b148').setView([<?php echo $objet->lat; ?>, <?php echo $objet->lon; ?>], 15);;
-L.marker([<?php echo $objet->lat; ?>, <?php echo $objet->lon; ?>], {
-    icon: L.mapbox.marker.icon({
+var map = L.mapbox.map('map', 'noux.11d3b148').setView([<?php echo $objet->lat; ?>, <?php echo $objet->lon; ?>], 15);;
+L.mapbox.featureLayer({
+    // this feature is in the GeoJSON format: see geojson.org
+    // for the full specification
+    type: 'Feature',
+    geometry: {
+        type: 'Point',
+        // coordinates here are in longitude, latitude order because
+        // x, y is the standard for GeoJSON and many formats
+        coordinates: [
+          <?php echo $objet->lat; ?>,
+          <?php echo $objet->lon; ?>
+        ]
+    },
+    properties: {
+        title: 'Peregrine Espresso',
+        description: '1718 14th St NW, Washington, DC',
+        // one can customize markers by adding simplestyle properties
+        // https://www.mapbox.com/guides/an-open-platform/#simplestyle
         'marker-size': 'large',
-        'marker-symbol': 'bus',
-        'marker-color': '#fa0'
-    })
+        'marker-color': '#BE9A6B',
+        'marker-symbol': 'bus'
+    }
 }).addTo(map);
 </script>
