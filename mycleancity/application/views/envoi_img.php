@@ -32,9 +32,9 @@
         						<span class="icon-next"></span>
         					</a>
         				</div>
-        				<p>N'avez vous jamais reve d'une ville propre sans dechet ? D'une ville sans tag ?</p>
-        				<p>Le changement peut se faire grace a vous ! Soyez les acteurs de votre ville !</p>
-        				<p>Comment faire ? Prenez une photo d'un lieu delabre ou sale et laisser la communaute decider si il faut y remedier. La photo une fois moderee sera traitee avec la particiaption de la mairie ou par vous !. N'attendez plus !</p>
+        				<p>N'avez-vous jamais r&ecirc;v&#233; d'une ville propre sans d&#233;chet ? D'une ville sans tag ?</p>
+        				<p>Le changement peut se faire gr&acirc;ce  &agrave; vous ! Soyez les acteurs de votre ville !</p>
+        				<p>Comment faire ? Prenez une photo d'un lieu d&#233;labr&#233; ou sale et laisser la communaut&#233; d&#233;cider s'il faut y rem&#233;dier. La photo, une fois mod&#233;r&#233;e, sera trait&#233;e avec la participation de la mairie ou par vous ! N'attendez plus !</p>
         			</div>
         		</div>
         	</div>
