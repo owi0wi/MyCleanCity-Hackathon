@@ -32,7 +32,7 @@ if (!empty($list)) {
         echo '<div class="row">';
         echo '<div class="box">';
         echo '<div class="col-lg-12">';
-        echo '<img class="img-responsive img-border img-left" src="'. $objet->path .'" alt="">';
+        echo '<a href="'. $objet->path .'" ><img class="img-responsive img-border img-left" src="'. $objet->path .'" alt=""></a>';
         echo '<hr class="visible-xs">';
         echo '<div id="map'.$i.'" class="map"></div>';
         echo "<script>
@@ -51,7 +51,6 @@ if (!empty($list)) {
             var map = L.mapbox.map('map".$i."', 'noux.11d3b148').setView([".$objet->lat.",".$objet->lon."], 15);
             L.marker([".$objet->lat.",".$objet->lon."], {icon: greenIcon}).addTo(map);
 </script>";
-        //echo '<p><strong>Coordonnees</strong> : Longitude :  '.$objet->lon.' | Latitude : '.$objet->lat.'</p>';
         echo '<p><strong>Ordre de priorite</strong> : '.$objet->priorite.'</p>';
         echo '<p><strong>Type</strong> : '.$objet->type.'</p>';
         echo '<hr>';
