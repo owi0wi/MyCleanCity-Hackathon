@@ -86,6 +86,44 @@ function listing(){
 		}
 		return array_reverse($listing);
 	}
+	function updateVo($id){
+				$id = $this->uri->segment(3, 0);
+				$doc = $this->listingModel->select($id);
+				$doc->validation = 0;
 
+							if($doc->validation == '0'){
+								$doc->oui +=1 ;
+							}elseif($doc->validation =='1'){
+								$doc->non +=1 ;
+							}elseif($doc->validation == '2'){
+								$doc->abus +=1 ;
+							}
+				print_r($doc);
+				$this->listingModel->update($doc);
+			}
+
+				function updateVn($id){
+				$id = $this->uri->segment(3, 0);
+				$doc = $this->listingModel->select($id);
+				$doc->validation = 1;
+							if($doc->validation == '0'){
+								$doc->oui +=1 ;
+							}elseif($doc->validation =='1'){
+								$doc->non +=1 ;
+							}elseif($doc->validation == '2'){
+								$doc->abus +=1 ;
+							}
+				$this->listingModel->update($doc);
+			}
+
+
+
+
+
+
+			function delete($id){
+				$doc = $this->listingModel->select($id);
+				$this->listingModel->delete($doc);
+			}
 }
 ?>
