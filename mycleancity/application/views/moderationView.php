@@ -61,17 +61,17 @@ if (!empty($list)) {
 ?>
 <script>
             var greenIcon = L.icon({
-    iconUrl: 'marker.png',
-    shadowUrl: 'leaf-shadow.png',
+    iconUrl: '/mycleancity-hackathon/mycleancity/assets/img/marker.png',
+    shadowUrl: '/mycleancity-hackathon/mycleancity/assets/img/shadow.png',
     iconSize:     [30, 41], // size of the icon
-    shadowSize:   [50, 64], // size of the shadow
-    iconAnchor:   [40, -74.50], // point of the icon which will correspond to marker's location
-    shadowAnchor: [40, -74.50],  // the same for the shadow
+    shadowSize:   [30, 41], // size of the shadow
+    iconAnchor:   [<?php echo $objet->lat; ?>, <?php echo $objet->lon; ?>], // point of the icon which will correspond to marker's location
+    shadowAnchor: [<?php echo $objet->lat; ?>, <?php echo $objet->lon; ?>],  // the same for the shadow
     popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
             // Provide your access token
             L.mapbox.accessToken = 'pk.eyJ1Ijoibm91eCIsImEiOiJyY0xMaUpVIn0.Wf6E2HX12J5M-XvIGlaA_g';
             // Create a map in the div #map
-            var map = L.mapbox.map('map', 'noux.11d3b148').setView([40, -74.50], 15);
-            L.marker([40, -74.50], {icon: greenIcon}).addTo(map);
+            var map = L.mapbox.map('map', 'noux.11d3b148').setView([<?php echo $objet->lat; ?>, <?php echo $objet->lon; ?>], 15);
+            L.marker([<?php echo $objet->lat; ?>, <?php echo $objet->lon; ?>], {icon: greenIcon}).addTo(map);
 </script>
