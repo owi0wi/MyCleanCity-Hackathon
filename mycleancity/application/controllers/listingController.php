@@ -88,6 +88,7 @@ class ListingController extends CI_Controller {
 	}
 
 			function update($id){
+
 				$doc = $this->listingModel->select($id);
 				foreach ($_POST as $key => $value) {
 					if($key != 'id'){
